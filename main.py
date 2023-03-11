@@ -15,7 +15,7 @@ def search():
     elif my_search == 2:
         my_name2 = input("Enter a description: ")
         for i in inventory:
-            if i['descriptions'] == my_name2:
+            if my_name2 in i['descriptions']:
                 print(i['name'])
             else:
                 print(f'According to this description "{my_name2}" product not found')
