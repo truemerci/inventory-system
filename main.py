@@ -2,23 +2,12 @@ inventory = []
 
 
 def search():
-    print("Enter 1 if you want to search by name")
-    print("Enter 2 if you want to search by description")
-    my_search = int(input())
-    if my_search == 1:
-        my_name1 = input("Enter your name: ")
-        for i in inventory:
-            if i['name'] == my_name1:
-                print(i['name'])
-            else:
-                print(f"No such name '{my_name1}'")
-    elif my_search == 2:
-        my_name2 = input("Enter a description: ")
-        for i in inventory:
-            if my_name2 in i['descriptions']:
-                print(i['name'])
-            else:
-                print(f'According to this description "{my_name2}" product not found')
+    my_search = input("Enter the name or description of the product: ")
+    for i in inventory:
+        if my_search == i['name'] or my_search in i['descriptions']:
+            print(i['name'])
+        else:
+            print(f"Product with this description {my_search} was not found")
 
 
 def update():
